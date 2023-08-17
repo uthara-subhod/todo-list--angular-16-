@@ -1,0 +1,27 @@
+#card-heading{
+  background-color: rgb(38, 38, 136);
+}
+
+#todo-box{
+  background-color: rgb(41, 18, 63);
+}
+
+/* Customize the scrollbar track and thumb */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f100; /* Color of the scrollbar track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(38, 38, 136); /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Round the corners of the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(72, 42, 156); /* Color of the thumb on hover */
+}
+
+

@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row mt-4" style="height: 700px;">
+      <div class="col"></div>
+      <div class="col-md-6 shadow" id="todo-box">
+        <div class="card mt-3" id="card-heading">
+          <h4 class="p-3 pb-2 text-center text-uppercase text-white">Todo List</h4>
+        </div>
+        <hr class="text-white">
+        <div class="input-group m-3">
+          <div class="col-10">
+
+            <input type="text" class="form-control" placeholder="Enter task" name="task" [(ngModel)]="taskVal">
+          </div>
+          <button class="btn btn-primary" type="button" (click)="addTask()">Add</button>
+        </div>
+        <div class="custom-scrollbar" style="overflow-y:auto; height:400px">
+        <div class="m-3" *ngFor="let task of tasks">
+          <div class="p-2 shadow border" *ngIf="!task.isEditing">
+
+
+              <div class="input-group row ps-3 py-2">
+
+                <div class="card col-md-9 border-0 pt-2 bg-transparent text-white">{{ task.task.task_name}}</div>
+                  <button class="btn btn-outline-primary col" (click)="editing(task)">
+                    <i class="fa-solid fa-pen-to-square" ></i>
+                  </button>
+                  <button class="btn btn-outline-primary col">
+                    <i class="fa-solid fa-trash" (click)="deleteTask(task)"></i>
+                  </button>
+              </div>
+
+
+
+          </div>
+          <div class="p-2 shadow border" *ngIf="task.isEditing">
+
+
+            <div class="input-group py-2">
+
+
+                <input type="text" class="form-control" name="task" [(ngModel)]="task.editVal">
+
+
+              <button class="btn btn-outline-primary" type="button" (click)="editTask(task)">Edit</button>
+              <button class="btn btn-outline-primary" (click)="editing(task)">Cancel</button>
+            </div>
+
+
+
+        </div>
+
+        </div>
+      </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
